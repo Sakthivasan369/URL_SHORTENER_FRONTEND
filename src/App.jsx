@@ -12,8 +12,8 @@ function App() {
   // State for loading status
   const [loading, setLoading] = useState(false);
 
-  // NOTE: Your Go backend is running on http://localhost:8080
-  const API_ENDPOINT = 'http://localhost:8080/api/shorten';
+  // NOTE: Your Go backend is running on http://localhost:8080 or meta,env
+ const API_ENDPOINT = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
