@@ -28,7 +28,8 @@ function App() {
     }
 
     try {
-      const response = await fetch(API_ENDPOINT, {
+      const response = await fetch(`${API_ENDPOINT}/api/shorten`, {
+
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -105,5 +106,7 @@ function App() {
     </div>
   );
 }
+console.log("Backend API URL:", import.meta.env.VITE_API_URL);
+
 
 export default App;
