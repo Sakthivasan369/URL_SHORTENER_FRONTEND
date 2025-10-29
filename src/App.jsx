@@ -8,7 +8,6 @@ function App() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // ✅ Use environment variable or fallback to localhost
   const API_ENDPOINT = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 
   const handleSubmit = async (e) => {
@@ -29,7 +28,7 @@ function App() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           long_url: longURL,
-          code: customCode.trim() || '', // send empty if no alias
+          code: customCode.trim() || '', 
         }),
       });
 
@@ -98,5 +97,5 @@ function App() {
 
 export default App;
 
-// ✅ Debug log to verify correct environment variable at build time
+
 console.log('Backend API URL:', import.meta.env.VITE_API_URL);
